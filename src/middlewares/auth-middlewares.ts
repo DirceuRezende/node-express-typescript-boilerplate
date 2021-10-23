@@ -6,7 +6,7 @@ import HttpException from '../exceptions/HttpException'
 import InvalidArgumentError from '../exceptions/InvalidArgumentError'
 
 export function local(req: Request, res: Response, next: NextFunction): void {
-  passport.authenticate('local', { session: false }, (error, user, info) => {
+  passport.authenticate('local', { session: false }, (error, user) => {
     if (error) {
       return next(error)
     }
@@ -50,11 +50,11 @@ export async function refresh(
     res.locals.user = await userRepository.getById(+id!)
 
     return next()
-  } catch (error: any) {
-    if (error.name === 'InvalidArgumentError') {
+  } catch (error) {
+    if ((error as Error).name === 'InvalidArgumentError') {
       return next(error)
     }
-    next(new HttpException(500, error.message))
+    next(new HttpException(500, (error as Error).message))
   }
 }
 
