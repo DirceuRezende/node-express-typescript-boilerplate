@@ -1,0 +1,11 @@
+import { SomeRepository } from '../../repositories/implements/SomeRepository'
+
+export class {{pascalCase name}}Service {
+  constructor(private someRepository: SomeRepository) {}
+
+  async execute() {
+    const some = await this.someRepository.get()
+
+    return some
+  }
+}

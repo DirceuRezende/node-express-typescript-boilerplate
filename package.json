@@ -10,6 +10,7 @@
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint-and-fix": "eslint . --ext .ts --fix",
+    "generate": "yarn plop --plopfile generators/plopfile.js",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%"
   },
@@ -44,6 +45,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1",
+    "plop": "^2.7.6",
     "prettier": "^2.4.1",
     "supertest": "^6.1.6",
     "ts-jest": "^27.0.7",

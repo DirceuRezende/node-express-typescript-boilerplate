@@ -1,0 +1,16 @@
+import { Request, Response, NextFunction } from 'express'
+import { {{pascalCase name}}Service } from './{{pascalCase name}}Service'
+
+export class {{pascalCase name}}Controller {
+  constructor(private {{camelCase name}}Service: {{pascalCase name}}Service) {}
+
+  async handle(req: Request, res: Response, next: NextFunction) {
+    try {
+      const response = await this.{{camelCase name}}Service.execute()
+
+      res.json(response)
+    } catch (e) {
+      next(e)
+    }
+  }
+}

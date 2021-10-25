@@ -1,0 +1,9 @@
+import { {{pascalCase name}}Controller } from './{{pascalCase name}}Controller'
+import { {{pascalCase name}}Service } from './{{pascalCase name}}Service'
+import { SomeRepository } from '../../repositories/implements/SomeRepository'
+
+const someRepository = new SomeRepository()
+const {{camelCase name}}Service = new {{pascalCase name}}Service(someRepository)
+const {{camelCase name}}Controller = new {{pascalCase name}}Controller({{camelCase name}}Service)
+
+export { {{camelCase name}}Controller, {{camelCase name}}Service }

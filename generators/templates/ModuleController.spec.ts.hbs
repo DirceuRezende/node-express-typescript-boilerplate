@@ -1,0 +1,13 @@
+import request from 'supertest'
+import { Application } from 'express'
+import App from '../../App'
+
+describe('<{{pascalCase name}}Controller />', () => {
+  let app: Application
+  beforeEach(async () => {
+    app = await new App().start()
+  })
+  it('should ', async () => {
+    const response = await request(app).get('/')
+  })
+})

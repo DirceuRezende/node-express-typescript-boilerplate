@@ -1,0 +1,13 @@
+import { {{pascalCase name}}Service } from './{{pascalCase name}}Service'
+import { SomeRepository } from '../../repositories/implements/SomeRepository'
+
+describe('<{{pascalCase name}}Service />', () => {
+  let {{camelCase name}}Service: {{pascalCase name}}Service
+  beforeEach(async () => {
+    const repository = new SomeRepository()
+    {{camelCase name}}Service = new {{pascalCase name}}Service(repository)
+  })
+  it('should ', async () => {
+    const response = await {{camelCase name}}Service.execute()
+  })
+})
